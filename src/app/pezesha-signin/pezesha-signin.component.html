@@ -169,25 +169,34 @@
             <div class="col-sm">
             <mat-form-field>
               <mat-label>Personal or Business KRA Pin</mat-label>
-              <input matInput formControlName="thirdCtrl" placeholder="" required>
+              <input matInput formControlName="kraPin" placeholder="" required>
+              <mdb-error
+                *ngIf="thirdFormGroup.controls.kraPin.invalid && (thirdFormGroup.controls.kraPin.dirty || thirdFormGroup.controls.kraPin.touched)">
+                Enter KRA Pin</mdb-error>
             </mat-form-field>
             </div>
             <div class="col-sm">
             <mat-form-field>
                   <mat-label>Amount Needed</mat-label>
-                  <mat-select matInput formControlName="thirdCtrl" placeholder="" required>
+                  <mat-select matInput formControlName="amountNeeded" placeholder="" required>
                     <mat-option value="Less than Ksh. 10,000">Less than Ksh. 10,000</mat-option>
                     <mat-option value="Ksh. 10,000 to Ksh. 20,000">Ksh. 10,000 to Ksh. 20,000</mat-option>
                   </mat-select>
+                  <mdb-error
+                    *ngIf="thirdFormGroup.controls.amountNeeded.invalid && (thirdFormGroup.controls.amountNeeded.dirty || thirdFormGroup.controls.amountNeeded.touched)">
+                    Enter Amount Needed</mdb-error>
             </mat-form-field>
             </div>
             <div class="col-sm">
             <mat-form-field>
               <mat-label>Use of Funds</mat-label>
-              <mat-select matInput formControlName="thirdCtrl" placeholder="" required>
+              <mat-select matInput formControlName="fundUse" placeholder="" required>
                 <mat-option value="Inventory/Stock Purchase">Inventory/Stock Purchase</mat-option>
                 <mat-option value="Rent">Rent</mat-option>
               </mat-select>
+              <mdb-error
+                *ngIf="thirdFormGroup.controls.fundUse.invalid && (thirdFormGroup.controls.fundUse.dirty || thirdFormGroup.controls.fundUse.touched)">
+                Specify Use of Funds</mdb-error>
             </mat-form-field>
             </div>
             </div>
@@ -195,19 +204,25 @@
               <div class="class="col-sm>
                 <mat-form-field>
                   <mat-label>Repay Period</mat-label>
-                  <mat-select matInput formControlName="thirdCtrl" placeholder="" required>
+                  <mat-select matInput formControlName="repaymentPeriod" placeholder="" required>
                     <mat-option value="2 months">2 months</mat-option>
                     <mat-option value="2-6 months">2-6 months</mat-option>
                   </mat-select>
+                  <mdb-error
+                    *ngIf="thirdFormGroup.controls.repaymentPeriod.invalid && (thirdFormGroup.controls.repaymentPeriod.dirty || thirdFormGroup.controls.repaymentPeriod.touched)">
+                    Specify Repay Period</mdb-error>
                 </mat-form-field>
                 </div>
                 <div class="col-sm">
                   <mat-form-field>
                     <mat-label>How did you hear about SME Program</mat-label>
-                    <mat-select matInput formControlName="thirdCtrl" placeholder="" required>
+                    <mat-select matInput formControlName="infoonSme" placeholder="" required>
                       <mat-option value="Google Search">Google Search</mat-option>
                       <mat-option value="Linkedin">LinkedIn</mat-option>
                     </mat-select>
+                    <mdb-error
+                      *ngIf="thirdFormGroup.controls.infoonSme.invalid && (thirdFormGroup.controls.infoonSme.dirty || thirdFormGroup.controls.infoonSme.touched)">
+                      Pick an Option</mdb-error>
                   </mat-form-field>
                   </div>
               </div>

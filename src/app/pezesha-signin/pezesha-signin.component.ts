@@ -37,7 +37,11 @@ export class PezeshaSigninComponent implements OnInit {
       mpesaTill: ['', Validators.required],
     });
     this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required]
+      kraPin: ['', Validators.required],
+      amountNeeded: ['', Validators.required],
+      fundUse: ['', Validators.required],
+      repaymentPeriod: ['', Validators.required],
+      infoonSme: ['', Validators.required]
     });
 
   }
