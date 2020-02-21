@@ -38,7 +38,7 @@
             <mdb-error *ngIf="firstFormGroup.controls.Email.invalid && (firstFormGroup.controls.Email.dirty || firstFormGroup.controls.Email.touched)">Invalid email address</mdb-error>
           </mat-form-field>
 
-          <div class="row justify-content-between">
+          <div class="row justify-content-between" style="padding-top: 20px;">
             <button mdbBtn class="button" size='sm' rounded="true" type="button" mdbWavesEffect matStepperNext>Next</button>
           </div>
         </form>
@@ -50,23 +50,32 @@
             <div class="col-sm">
             <mat-form-field>
             <mat-label>Company Name</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="" required>
+            <input matInput formControlName="companyName" placeholder="" required>
+            <mdb-error
+              *ngIf="secondFormGroup.controls.companyName.invalid && (secondFormGroup.controls.companyName.dirty || secondFormGroup.controls.companyName.touched)">
+              Enter Company Name</mdb-error>
           </mat-form-field>
             </div>
             <div class="col-sm">
               <mat-form-field>
                 <mat-label>Specific Location</mat-label>
-                <input matInput formControlName="secondCtrl" placeholder="" required>
+                <input matInput formControlName="specificLocation" placeholder="" required>
+                <mdb-error
+                  *ngIf="secondFormGroup.controls.specificLocation.invalid && (secondFormGroup.controls.specificLocation.dirty || secondFormGroup.controls.specificLocation.touched)">
+                  Enter Specific Locations</mdb-error>
               </mat-form-field>
             </div>
             <div class="col-sm">
           <mat-form-field>
             <mat-label>Type of Business</mat-label>
-            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+            <mat-select matInput formControlName="business" placeholder="" required>
               <mat-option value="sole">Sole Proprietor</mat-option>
               <mat-option value="partnership">Partnership</mat-option>
               <mat-option value="Limited">Limited</mat-option>
             </mat-select>
+            <mdb-error
+              *ngIf="secondFormGroup.controls.business.invalid && (secondFormGroup.controls.business.dirty || secondFormGroup.controls.business.touched)">
+              Select a Business Type</mdb-error>
           </mat-form-field>
             </div>
         </div>
@@ -75,28 +84,37 @@
             <div class="col-sm">
             <mat-form-field>
             <mat-label>How old is the business?</mat-label>
-            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+            <mat-select matInput formControlName="ageBusiness" placeholder="" required>
               <mat-option value="Less than 1 month">Less than 1 month</mat-option>
               <mat-option value="1 to 6 months">1 to 6 months</mat-option>
             </mat-select>
+            <mdb-error
+              *ngIf="secondFormGroup.controls.ageBusiness.invalid && (secondFormGroup.controls.ageBusiness.dirty || secondFormGroup.controls.ageBusiness.touched)">
+              Pick a Category</mdb-error>
             </mat-form-field>
             </div>
             <div class="col-sm">
           <mat-form-field>
             <mat-label>Industry of Business</mat-label>
-            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+            <mat-select matInput formControlName="industry" placeholder="" required>
               <mat-option value="Manufucturing">Manufucturing</mat-option>
               <mat-option value="Services">Services</mat-option>
             </mat-select>
+            <mdb-error
+              *ngIf="secondFormGroup.controls.industry.invalid && (secondFormGroup.controls.industry.dirty || secondFormGroup.controls.industry.touched)">
+              Pick an Industry</mdb-error>
           </mat-form-field>
             </div>
             <div class="col-sm">
           <mat-form-field>
             <mat-label>Estimated Yearly Revenue</mat-label>
-            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+            <mat-select matInput formControlName="revenue" placeholder="" required>
               <mat-option value="Ksh. 0 to Ksh. 50,000">Ksh. 0 to Ksh. 50,000</mat-option>
               <mat-option value="Ksh. 50,000 to Ksh. 100,000">Ksh. 50,000 to Ksh. 100,000</mat-option>
             </mat-select>
+            <mdb-error
+              *ngIf="secondFormGroup.controls.revenue.invalid && (secondFormGroup.controls.revenue.dirty || secondFormGroup.controls.revenue.touched)">
+              Enter Yearly Revenue Estimate</mdb-error>
           </mat-form-field>
             </div>
           </div>
@@ -105,29 +123,35 @@
             <div class="col-sm">
             <mat-form-field>
               <mat-label>Company Registration No. or Equivalent</mat-label>
-              <input matInput formControlName="secondCtrl" placeholder="Reg. No"
+              <input matInput formControlName="regCompany" placeholder="Reg. No"
                    required>
+                  <mdb-error
+                    *ngIf="secondFormGroup.controls.regCompany.invalid && (secondFormGroup.controls.regCompany.dirty || secondFormGroup.controls.regCompany.touched)">
+                    Enter Company Reg. No</mdb-error>
             </mat-form-field>
             </div>
             <div class="col-sm">
             <mat-form-field>
               <mat-label>Company Website/Social Media (Optional)</mat-label>
-              <input matInput formControlName="secondCtrl" placeholder="">
+              <input matInput formControlName="socialWebsite" placeholder="">
             </mat-form-field>
             </div>
             <div class="col-sm">
           <mat-form-field>
             <mat-label>Are Mpesa/Till Payments Accepted?</mat-label>
-            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+            <mat-select matInput formControlName="mpesaTill" placeholder="" required>
               <mat-option value="Yes">Yes</mat-option>
               <mat-option value="No">No</mat-option>
             </mat-select>
+            <mdb-error
+              *ngIf="secondFormGroup.controls.mpesaTill.invalid && (secondFormGroup.controls.mpesaTill.dirty || secondFormGroup.controls.mpesaTill.touched)">
+              Pick Option</mdb-error>
             </mat-form-field>
             </div>
         </div>
 
 
-          <div class="row justify-content-between">
+          <div class="row justify-content-between" style="padding-top: 20px;">
             <div class="col-4">
             <button mdbBtn color="danger" size='sm' rounded="true" type="button" mdbWavesEffect matStepperPrevious>Back</button>
             </div>
@@ -194,7 +218,7 @@
 
             <mat-checkbox>I agree to the terms and conditions</mat-checkbox>
           </div>
-          <div class="row justify-content-between">
+          <div class="row justify-content-between" style="padding-top: 20px;">
             <div class="col-4">
             <button mdbBtn color="danger" size='sm' rounded="true" type="button" mdbWavesEffect matStepperPrevious>Back</button>
             </div>

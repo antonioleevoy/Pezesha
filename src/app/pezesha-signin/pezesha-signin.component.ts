@@ -26,7 +26,15 @@ export class PezeshaSigninComponent implements OnInit {
 
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      companyName: ['', Validators.required],
+      specificLocation: ['', Validators.required],
+      business: ['', Validators.required],
+      ageBusiness: ['', Validators.required],
+      industry: ['', Validators.required],
+      revenue: ['', Validators.required],
+      regCompany: ['', Validators.required],
+      socialWebsite: ['', Validators.required],
+      mpesaTill: ['', Validators.required],
     });
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required]
