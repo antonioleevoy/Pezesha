@@ -1,0 +1,36 @@
+h1{
+  text-align: center;
+  font-family: roboto;
+  font-size: 30px;
+}
+h2{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+
+.container{
+  padding-top: 15px;
+}
+.logo{
+  position:center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgba(210, 255, 200, 0.04) !important;
+}
+
+.button{
+  background-color: #3f51b5;
+  color: #fff;
+}

@@ -1,0 +1,218 @@
+<div class="container">
+  <div class="head">
+        <h1>SME Loan Application</h1>
+        <h3><i>Complete the following steps to submit your application</i></h3>
+  </div>
+
+    <mat-horizontal-stepper labelPosition="bottom" linear #stepper>
+      <mat-step [stepControl]="firstFormGroup" label="Personal Details" state="user">
+        <form [formGroup]="firstFormGroup" (ngSubmit)="form1()" #formone="ngForm">
+        <div class="row justify-content-center" >
+          <div class="col">
+          <mat-form-field>
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Full Name"  formControlName="fullName" required>
+            <mdb-error *ngIf="firstFormGroup.controls.fullName.invalid && (firstFormGroup.controls.fullName.dirty || firstFormGroup.controls.fullName.touched)">Invalid full Name</mdb-error>
+          </mat-form-field>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="+254" formControlName="phoneNumber" required>
+            <mdb-error *ngIf="firstFormGroup.controls.phoneNumber.invalid && (firstFormGroup.controls.phoneNumber.dirty || firstFormGroup.controls.phoneNumber.touched)">Invalid phone Number</mdb-error>
+          </mat-form-field>
+          </div>
+          <div class="col">
+          <mat-form-field>
+            <mat-label>ID Number</mat-label>
+            <input matInput placeholder="National ID" formControlName="idNumber" required>
+            <mdb-error *ngIf="firstFormGroup.controls.idNumber.invalid && (firstFormGroup.controls.idNumber.dirty || firstFormGroup.controls.idNumber.touched)">Invalid id Number</mdb-error>
+          </mat-form-field>
+          </div>
+        </div>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email address" formControlName="Email" required>
+            <mdb-error *ngIf="firstFormGroup.controls.Email.invalid && (firstFormGroup.controls.Email.dirty || firstFormGroup.controls.Email.touched)">Invalid email adress</mdb-error>
+          </mat-form-field>
+
+          <div class="row justify-content-between">
+            <button mdbBtn class="button" size='sm' rounded="true" type="button" mdbWavesEffect matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      
+      <mat-step [stepControl]="secondFormGroup" label="Business Info" state="chat">
+        <form [formGroup]="secondFormGroup" (ngSubmit)="form2()" #formtwo="ngForm">
+          <div class="row">
+            <div class="col-sm">
+            <mat-form-field>
+            <mat-label>Company Name</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="" required>
+          </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Specific Location</mat-label>
+                <input matInput formControlName="secondCtrl" placeholder="" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+          <mat-form-field>
+            <mat-label>Type of Business</mat-label>
+            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+              <mat-option value="sole">Sole Proprietor</mat-option>
+              <mat-option value="partnership">Partnership</mat-option>
+            </mat-select>
+          </mat-form-field>
+            </div>
+        </div>
+
+          <div class="row">
+            <div class="col-sm">
+            <mat-form-field>
+            <mat-label>How old is the business</mat-label>
+            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+              <mat-option value="Less than 1 month">Less than 1 month</mat-option>
+              <mat-option value="1 to 6 months">1 to 6 months</mat-option>
+            </mat-select>
+            </mat-form-field>
+            </div>
+            <div class="col-sm">
+          <mat-form-field>
+            <mat-label>Industry of Business</mat-label>
+            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+              <mat-option value="Manufucturing">Manufucturing</mat-option>
+              <mat-option value="Services">Services</mat-option>
+            </mat-select>
+          </mat-form-field>
+            </div>
+            <div class="col-sm">
+          <mat-form-field>
+            <mat-label>Estimated Yearly Revenue</mat-label>
+            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+              <mat-option value="Ksh. 0 to Ksh. 50,000">Ksh. 0 to Ksh. 50,000</mat-option>
+              <mat-option value="Ksh. 50,000 to Ksh. 100,000">Ksh. 50,000 to Ksh. 100,000</mat-option>
+            </mat-select>
+          </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+            <mat-form-field>
+              <mat-label>Company Registration No. or Equivalent</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="Reg. No"
+                   required>
+            </mat-form-field>
+            </div>
+            <div class="col-sm">
+            <mat-form-field>
+              <mat-label>Company Website/Social Media (Optional)</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="">
+            </mat-form-field>
+            </div>
+            <div class="col-sm">
+          <mat-form-field>
+            <mat-label>Are Mpesa/Till Payments Accepted?</mat-label>
+            <mat-select matInput formControlName="secondCtrl" placeholder="" required>
+              <mat-option value="Yes">Yes</mat-option>
+              <mat-option value="No">No</mat-option>
+            </mat-select>
+            </mat-form-field>
+            </div>
+        </div>
+        
+
+          <div class="row justify-content-between">
+            <div class="col-4">
+            <button mdbBtn color="danger" size='sm' rounded="true" type="button" mdbWavesEffect matStepperPrevious>Back</button>
+            </div>
+            <div class="col-4">
+            <button mdbBtn class="button" size='sm' rounded="true" type="button" mdbWavesEffect  matStepperNext>Next</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="thirdFormGroup" label="Funding Needs" state="money">
+        <form [formGroup]="thirdFormGroup" (ngSubmit)="form3()" #formthree="ngForm">
+          
+          <div class="row">
+            <div class="col-sm">
+            <mat-form-field>
+              <mat-label>Personal or Business KRA Pin</mat-label>
+              <input matInput formControlName="thirdCtrl" placeholder="" required>
+            </mat-form-field>
+            </div>
+            <div class="col-sm">
+            <mat-form-field>
+                  <mat-label>Amount Needed</mat-label>
+                  <mat-select matInput formControlName="thirdCtrl" placeholder="" required>
+                    <mat-option value="Less than Ksh. 10,000">Less than Ksh. 10,000</mat-option>
+                    <mat-option value="Ksh. 10,000 to Ksh. 20,000">Ksh. 10,000 to Ksh. 20,000</mat-option>
+                  </mat-select>
+            </mat-form-field>
+            </div>
+            <div class="col-sm">
+            <mat-form-field>
+              <mat-label>Use of Funds</mat-label>
+              <mat-select matInput formControlName="thirdCtrl" placeholder="" required>
+                <mat-option value="Inventory/Stock Purchase">Inventory/Stock Purchase</mat-option>
+                <mat-option value="Rent">Rent</mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field>
+                  <mat-label>Repay Period</mat-label>
+                  <mat-select matInput formControlName="thirdCtrl" placeholder="" required>
+                    <mat-option value="2 months">2 months</mat-option>
+                    <mat-option value="2-6 months">2-6 months</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field>
+                    <mat-label>How did you hear about SME Program</mat-label>
+                    <mat-select matInput formControlName="thirdCtrl" placeholder="" required>
+                      <mat-option value="Google Search">Google Search</mat-option>
+                      <mat-option value="Linkedin">LinkedIn</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  </div>
+              </div>
+          <div>
+            <h3>Please read the following <a href="https://www.google.com">Terms and Conditions</a></h3> 
+
+            <br>
+
+            <mat-checkbox>I agree to the terms and conditions</mat-checkbox>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-4">
+            <button mdbBtn color="danger" size='sm' rounded="true" type="button" mdbWavesEffect matStepperPrevious>Back</button>
+            </div>
+            <div class="col-4">
+            <button mdbBtn type="button" class="button" rounded="true" type="button" mdbWavesEffect size="sm" (click)="formone.ngSubmit.emit();formtwo.ngSubmit.emit();formthree.ngSubmit.emit()">Submit</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+
+      <!-- Icon overrides. -->
+        <ng-template matStepperIcon="User">
+          <mat-icon>User</mat-icon>
+        </ng-template>
+        <ng-template matStepperIcon="chat">
+          <mat-icon>forum</mat-icon>
+        </ng-template>
+        <ng-template matStepperIcon="money">
+          <mat-icon>money</mat-icon>
+        </ng-template>
+    </mat-horizontal-stepper>
+</div>
