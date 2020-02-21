@@ -35,7 +35,7 @@
           <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput placeholder="email address" formControlName="Email" required>
-            <mdb-error *ngIf="firstFormGroup.controls.Email.invalid && (firstFormGroup.controls.Email.dirty || firstFormGroup.controls.Email.touched)">Invalid email adress</mdb-error>
+            <mdb-error *ngIf="firstFormGroup.controls.Email.invalid && (firstFormGroup.controls.Email.dirty || firstFormGroup.controls.Email.touched)">Invalid email address</mdb-error>
           </mat-form-field>
 
           <div class="row justify-content-between">
@@ -43,7 +43,7 @@
           </div>
         </form>
       </mat-step>
-      
+
       <mat-step [stepControl]="secondFormGroup" label="Business Info" state="chat">
         <form [formGroup]="secondFormGroup" (ngSubmit)="form2()" #formtwo="ngForm">
           <div class="row">
@@ -65,6 +65,7 @@
             <mat-select matInput formControlName="secondCtrl" placeholder="" required>
               <mat-option value="sole">Sole Proprietor</mat-option>
               <mat-option value="partnership">Partnership</mat-option>
+              <mat-option value="Limited">Limited</mat-option>
             </mat-select>
           </mat-form-field>
             </div>
@@ -73,7 +74,7 @@
           <div class="row">
             <div class="col-sm">
             <mat-form-field>
-            <mat-label>How old is the business</mat-label>
+            <mat-label>How old is the business?</mat-label>
             <mat-select matInput formControlName="secondCtrl" placeholder="" required>
               <mat-option value="Less than 1 month">Less than 1 month</mat-option>
               <mat-option value="1 to 6 months">1 to 6 months</mat-option>
@@ -124,7 +125,7 @@
             </mat-form-field>
             </div>
         </div>
-        
+
 
           <div class="row justify-content-between">
             <div class="col-4">
@@ -139,7 +140,7 @@
 
       <mat-step [stepControl]="thirdFormGroup" label="Funding Needs" state="money">
         <form [formGroup]="thirdFormGroup" (ngSubmit)="form3()" #formthree="ngForm">
-          
+
           <div class="row">
             <div class="col-sm">
             <mat-form-field>
@@ -187,7 +188,7 @@
                   </div>
               </div>
           <div>
-            <h3>Please read the following <a href="https://www.google.com">Terms and Conditions</a></h3> 
+            <h3>Please read the following <a href="https://www.google.com">Terms and Conditions</a></h3>
 
             <br>
 
