@@ -198,9 +198,14 @@
             <div class="col-4">
             <button mdbBtn color="danger" size='sm' rounded="true" type="button" mdbWavesEffect matStepperPrevious>Back</button>
             </div>
-            <div class="col-4">
+            <!--<div class="col-4">
             <button mdbBtn type="button" class="button" rounded="true" type="button" mdbWavesEffect size="sm" (click)="formone.ngSubmit.emit();formtwo.ngSubmit.emit();formthree.ngSubmit.emit()">Submit</button>
+            </div>-->
+            <div class="col-4">
+              <button mdbBtn class="button" size='sm' rounded="true" type="button" mdbWavesEffect
+                (click)="stepper.reset()">Next</button>
             </div>
+
           </div>
         </form>
       </mat-step>
